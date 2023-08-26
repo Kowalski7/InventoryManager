@@ -1,0 +1,12 @@
+python-dotenv
+flask
+pyjwt
+Flask-SQLAlchemy
+Pillow
+requests
+schedule
+autopep8
+plotly
+pandas
+kaleido==0.1.0post1 # for plotly. version 0.1.0post1 required for Windows 11. otherwise, use latest
+mysqlclient
