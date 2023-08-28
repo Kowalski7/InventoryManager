@@ -98,7 +98,7 @@ def account_delete(user, id):
 @token_required
 def account_change_password(user):
     data = request.get_json()
-    if "new_password" not in data:
+    if data.get('new_password') in [None, '']:
         return make_response(jsonify({"message": "Missing required parameter"}), 400)
 
     user.password = generate_password_hash(

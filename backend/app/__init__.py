@@ -8,6 +8,7 @@ import string
 
 import app.extensions as extensions
 
+from app.middleware.exceptionHandler import handle_exception
 from app.utils import safe_uuid
 from app.models.Users import Users
 from app.modules.scheduled_tasks import TaskScheduler
@@ -113,5 +114,8 @@ def create_app(config_class=Config):
     app.register_blueprint(configurator)
     app.register_blueprint(archive)
     app.register_blueprint(tests)
+
+    # Register error handler
+    app.register_error_handler(Exception, handle_exception)
 
     return app
