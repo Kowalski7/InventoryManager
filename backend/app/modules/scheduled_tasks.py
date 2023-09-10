@@ -45,6 +45,7 @@ class TaskScheduler:
                     sleep(1)
 
         os.remove(".task_scheduler_running")
+        self.runner_thread = None
         print("[TASK SCHEDULER] Stopped scheduled task runner!")
 
     def queue_task_asap(self, task: str):
